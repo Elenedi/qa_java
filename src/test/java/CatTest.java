@@ -18,7 +18,7 @@ public class CatTest {
     Feline feline;
 
     @Test
-    public void soundIsCorrect() {
+    public void soundIsCorrectTest() {
         String expectedString = "Мяу";
 
         MatcherAssert.assertThat("Коты издают другие звуки",
@@ -28,9 +28,9 @@ public class CatTest {
     }
 
     @Test
-    public void foodIsCorrect() throws Exception {
+    public void foodIsCorrectTest() throws Exception {
         Cat cat = new Cat(feline);
-        List<String> expectedListOfFood = List.of("Мясо");
+        List<String> expectedListOfFood = List.of("Животные","Птицы","Рыба");
         Mockito.when(feline.eatMeat()).thenReturn(expectedListOfFood);
 
         MatcherAssert.assertThat("Некорректный список еды",

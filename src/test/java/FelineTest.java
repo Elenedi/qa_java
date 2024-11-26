@@ -8,7 +8,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 public class FelineTest {
 
     @Test
-    public void familyIsCorrect() {
+    public void familyIsCorrectTest() {
         String expectedFelineFamilyName = "Кошачьи";
         MatcherAssert.assertThat("Неверное название семейства",
                 new Feline().getFamily(),
@@ -17,7 +17,7 @@ public class FelineTest {
     }
 
     @Test
-    public void kittensInputCountIsCorrect() {
+    public void kittensInputCountIsCorrectTest() {
         int expectedCount = 3;
         MatcherAssert.assertThat("Неверное количество котят",
                 new Feline().getKittens(expectedCount),
@@ -26,7 +26,7 @@ public class FelineTest {
     }
 
     @Test
-    public void kittensDefaultIsCorrect() {
+    public void kittensDefaultIsCorrectTest() {
         int expectedCount = 1;
         MatcherAssert.assertThat("Неверное количество котят",
                 new Feline().getKittens(),
@@ -35,7 +35,7 @@ public class FelineTest {
     }
 
     @Test
-    public void eatMeatIsCorrect() throws Exception {
+    public void eatMeatIsCorrectTest() throws Exception {
         Feline feline = new Feline();
 
         MatcherAssert.assertThat("Неверный список еды",

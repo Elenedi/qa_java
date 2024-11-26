@@ -5,7 +5,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnit;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
@@ -32,7 +31,7 @@ public class LionParamTest {
     }
 
     @Test
-    public void haveManeIsCorrect() throws Exception {
+    public void haveManeIsCorrectTest() throws Exception {
         MatcherAssert.assertThat("У львиц нет гривы",
                 new Lion(feline, this.sex).doesHaveMane(),
                 equalTo(hasMane)

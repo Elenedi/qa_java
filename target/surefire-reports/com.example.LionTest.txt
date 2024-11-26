@@ -1,11 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: com.example.LionTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.027 s <<< FAILURE! - in com.example.LionTest
-foodIsCorrect(com.example.LionTest)  Time elapsed: 0.011 s  <<< FAILURE!
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.028 s <<< FAILURE! - in com.example.LionTest
+foodIsCorrectTest(com.example.LionTest)  Time elapsed: 0.012 s  <<< FAILURE!
 java.lang.AssertionError: 
 Некорректный список еды
 Expected: <[Баранина]>
      but: was <[]>
-	at com.example.LionTest.foodIsCorrect(LionTest.java:51)
+	at com.example.LionTest.foodIsCorrectTest(LionTest.java:51)
 
