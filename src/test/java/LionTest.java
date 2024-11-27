@@ -1,9 +1,7 @@
 package com.example;
 
 import org.hamcrest.MatcherAssert;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -12,22 +10,21 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertThrows;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
 
-    @Rule
-    public ExpectedException expectedEx = ExpectedException.none();
 
     @Mock
     Feline feline;
 
     @Test
-    public void createLionThrowsExceptionTest() throws Exception {
-        expectedEx.expect(Exception.class);
-        expectedEx.expectMessage("Используйте допустимые значения пола животного - самец или самка");
-
-        new Lion(feline, "Не определено");
+    public void createLionThrowsExceptionTest() {
+        Exception exception = assertThrows(Exception.class, () -> {
+            new Lion(feline, "Не определено");
+                });
+        MatcherAssert.assertThat(exception.getMessage(), equalTo("Используйте допустимые значения пола животного - самец или самка"));
     }
 
     @Test
@@ -46,7 +43,7 @@ public class LionTest {
     public void foodIsCorrectTest() throws Exception {
         Lion lion = new Lion(feline, "Самец");
         List<String> expectedListOfFood = List.of("Баранина");
-        Mockito.when(feline.getFood("Хищник")).thenReturn(expectedListOfFood);
+        Mockito.when(feline.eatMeat()).thenReturn(expectedListOfFood);
 
         MatcherAssert.assertThat("Некорректный список еды",
                 lion.getFood(),
