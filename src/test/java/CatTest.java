@@ -30,7 +30,7 @@ public class CatTest {
     @Test
     public void foodIsCorrectTest() throws Exception {
         Cat cat = new Cat(feline);
-        List<String> expectedListOfFood = List.of("Животные","Птицы","Рыба");
+        List<String> expectedListOfFood = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(feline.eatMeat()).thenReturn(expectedListOfFood);
 
         MatcherAssert.assertThat("Некорректный список еды",
