@@ -10,7 +10,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.*;
+
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
@@ -42,12 +43,13 @@ public class LionTest {
     @Test
     public void foodIsCorrectTest() throws Exception {
         Lion lion = new Lion(feline, "Самец");
-        List<String> expectedListOfFood = List.of("Баранина");
+        List<String> expectedListOfFood = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(feline.eatMeat()).thenReturn(expectedListOfFood);
 
-        MatcherAssert.assertThat("Некорректный список еды",
-                lion.getFood(),
-                equalTo(expectedListOfFood)
-        );
+        assertEquals(expectedListOfFood, lion.getFood());
+        if (!expectedListOfFood.equals(lion.getFood())) {
+            fail("Некорректный список еды");
+        }
+
     }
 }

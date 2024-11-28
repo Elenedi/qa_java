@@ -2,6 +2,7 @@ package com.example;
 
 import org.hamcrest.MatcherAssert;
 import org.junit.Test;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
@@ -37,10 +38,10 @@ public class FelineTest {
     @Test
     public void eatMeatIsCorrectTest() throws Exception {
         Feline feline = new Feline();
-
+        List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
         MatcherAssert.assertThat("Неверный список еды",
                 feline.eatMeat(),
-                equalTo(feline.getFood("Хищник"))
+                equalTo(expectedFood)
         );
     }
 }
